@@ -24,7 +24,7 @@
         {{ param.name }}
       </td>
       <td>
-        <a href="#!/type/{{ param.type | actualType }}">{{ param.type }}</a>
+        <a href="#!/{{ param.type | actualType | typeLink }}">{{ param.type }}</a>
       </td>
       <td>
         <input type="{{ param.type | htmlType }}" step="{{ param.type | htmlStep }}" ng-model="playgroundVals[param.name]" ng-change="updatePlayground()" id="param-{{ param.name }}">
@@ -36,7 +36,7 @@
     This constructor has no fields.
   </div>
 
-  <h3>Constructs <a href="#!/type/{{ constructor.type | actualType }}">{{ constructor.type }}</a></h3>
+  <h3>Constructs <a href="#!/{{ constructor.type | actualType | typeLink}}">{{ constructor.type }}</a></h3>
 
   <h2>Example (beta)</h2>
 

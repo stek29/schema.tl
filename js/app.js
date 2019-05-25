@@ -55,6 +55,14 @@ tlDocsApp.filter("actualType", function() {
   }
 })
 
+tlDocsApp.filter("typeLink", function() {
+  return function(type) {
+    firstChar = type.split('.').pop().charAt(0)
+    objectType = (firstChar === firstChar.toUpperCase()) ? 'type' : 'constructor'
+    return objectType + '/' + type
+  }
+})
+
 tlDocsApp.filter("htmlType", function() {
   return function(type) {
     if(type.toLowerCase().indexOf("int") !== -1 || type.toLowerCase().indexOf("long") !== -1 || type === "#" || type.toLowerCase().indexOf("double") !== -1) {
